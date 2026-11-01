@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10100f">
+    <meta name="description" content="Temukan rilisan terbaru DESRITED dan info pre-order eksklusif.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>DESRITED</title>
+</head>
+<body>
+
+    <header class="site-header">
+        <a class="brand" href="#beranda" aria-label="DESRITED, ke beranda">
+            <span class="brand-mark">
+                <img src="logo%20and%20photo/logo.png" alt="">
+            </span>
+        </a>
+        <a class="admin-link" href="admin.html">Admin <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+        <section class="hero" id="beranda" aria-labelledby="hero-title">
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow"><span class="eyebrow-line"></span> INDEPENDENT STREETWEAR · DROP 01</p>
+                <h1 id="hero-title">Wear your<br><span>own rules.</span></h1>
+                <p class="hero-copy">Bukan sekadar pakaian. Ini tentang cara kamu membawa diri dan aturan yang kamu pilih sendiri.</p>
+                <a class="button button-light" href="#koleksi">Lihat rilisan <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-caption">
+                <span>DESRITED / 001</span>
+                <span>MADE TO STAND OUT</span>
+            </div>
+            <div class="hero-scroll" aria-hidden="true"><span></span> SCROLL TO EXPLORE</div>
+        </section>
+
+        <section class="drop-section" id="koleksi">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> THE FIRST RELEASE</p>
+                    <h2>Drop <span>01</span></h2>
+                </div>
+                <p class="section-intro">Satu rilisan. Satu pernyataan.<br>Dibuat untuk jadi bagian dari caramu.</p>
+            </div>
+
+            <div class="product-layout">
+                <div class="product-image">
+                    <img class="product-mockup" id="product-mockup" src="logo%20and%20photo/bg.jpeg" alt="Model mengenakan hoodie DESRITED">
+                    <span class="image-label">CAMPAIGN / 001</span>
+                    <span class="image-index">01 — 01</span>
+                </div>
+                <div class="product-info" id="tentang">
+                    <p class="eyebrow eyebrow-dark">DESRITED ORIGINALS</p>
+                    <h3>Zip Hoodie<br><span>“Own Rules”</span></h3>
+                    <p class="product-description">Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.</p>
+                    <div class="product-divider"></div>
+                    <dl class="product-details">
+                        <div><dt>Warna</dt><dd><span id="product-color-name">Black</span></dd></div>
+                        <div><dt>Ukuran</dt><dd id="product-sizes">S / M / L / XL / XXL</dd></div>
+                        <div><dt>Harga</dt><dd id="product-price">Info segera tersedia</dd></div>
+                    </dl>
+                    <a class="button button-light" href="#preorder">Pesan sekarang <span aria-hidden="true">↗</span></a>
+                    <p class="product-note" id="product-note">Memuat informasi produk...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="preorder-section" id="preorder">
+            <div class="preorder-inner">
+                <div class="preorder-copy">
+                    <p class="eyebrow"><span class="eyebrow-line"></span> BE PART OF THE FIRST DROP</p>
+                    <h2>Pre-order<br><span>sekarang.</span></h2>
+                    <p>Isi detail pesananmu, lalu lanjutkan pemesanan melalui WhatsApp DESRITED.</p>
+                    <div class="preorder-note"><span aria-hidden="true">✳</span> Pesanan dikirim langsung ke WhatsApp admin.</div>
+                </div>
+                <form class="interest-form" id="interest-form">
+                    <p class="form-kicker">DROP 01 · <span id="order-color-name">BLACK</span></p>
+                    <h3>Detail pesanan</h3>
+                    <label for="customer-name">Nama lengkap</label>
+                    <input id="customer-name" name="name" type="text" placeholder="Masukkan nama lengkap" autocomplete="name" required>
+                    <label for="customer-address">Alamat pengiriman</label>
+                    <textarea id="customer-address" name="address" placeholder="Nama jalan, nomor rumah, kelurahan, kecamatan, kota, kode pos" autocomplete="street-address" rows="4" required></textarea>
+                    <fieldset class="size-picker">
+                        <legend>Pilih ukuran dan jumlah</legend>
+                        <div class="size-rows"></div>
+                    </fieldset>
+                    <p class="order-total" aria-live="polite">Jumlah kaos: <output id="order-total">0</output></p>
+                    <p class="order-status" id="order-status" role="status" aria-live="polite"></p>
+                    <button class="button button-light form-button" type="submit">Pesan sekarang <span aria-hidden="true">↗</span></button>
+                    <p class="form-disclaimer">WhatsApp akan terbuka dengan detail pesananmu. Harga dan ketersediaan dikonfirmasi oleh admin.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Own your rules. © <span id="current-year"></span> DESRITED</p>
+        <a class="back-top" href="#beranda">Kembali ke atas ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
