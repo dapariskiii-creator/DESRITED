@@ -74,7 +74,8 @@
     font-weight: 600;
 }
 
-.admin-card input {
+.admin-card input,
+.admin-card textarea {
     width: 100%;
     min-height: 46px;
     padding: 0 12px;
@@ -86,7 +87,8 @@
     font-size: 13px;
 }
 
-.admin-card input:focus {
+.admin-card input:focus,
+.admin-card textarea:focus {
     border-color: var(--ink);
 }
 

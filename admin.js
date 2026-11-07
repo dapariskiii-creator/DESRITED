@@ -65,6 +65,13 @@ function isValidProductSettings(settings) {
         && typeof settings.note === "string"
         && settings.note.length > 0
         && settings.note.length <= 120
+        && typeof settings.productTitle === "string" && settings.productTitle.length > 0 && settings.productTitle.length <= 60
+        && typeof settings.productSubtitle === "string" && settings.productSubtitle.length > 0 && settings.productSubtitle.length <= 60
+        && typeof settings.productDescription === "string" && settings.productDescription.length > 0 && settings.productDescription.length <= 300
+        && typeof settings.releaseEyebrow === "string" && settings.releaseEyebrow.length > 0 && settings.releaseEyebrow.length <= 60
+        && typeof settings.releaseTitle === "string" && settings.releaseTitle.length > 0 && settings.releaseTitle.length <= 30
+        && typeof settings.releaseAccent === "string" && settings.releaseAccent.length > 0 && settings.releaseAccent.length <= 10
+        && typeof settings.releaseIntro === "string" && settings.releaseIntro.length > 0 && settings.releaseIntro.length <= 180
         && (settings.mockupImage === null || isValidMockupImage(settings.mockupImage));
 }
 
@@ -75,6 +82,13 @@ function isValidMockupImage(image) {
 }
 
 function populateSettingsForm() {
+    settingsForm.elements.productTitle.value = productSettings.productTitle;
+    settingsForm.elements.productSubtitle.value = productSettings.productSubtitle;
+    settingsForm.elements.productDescription.value = productSettings.productDescription;
+    settingsForm.elements.releaseEyebrow.value = productSettings.releaseEyebrow;
+    settingsForm.elements.releaseTitle.value = productSettings.releaseTitle;
+    settingsForm.elements.releaseAccent.value = productSettings.releaseAccent;
+    settingsForm.elements.releaseIntro.value = productSettings.releaseIntro;
     settingsForm.elements.colorName.value = productSettings.colorName;
     settingsForm.elements.sizes.value = productSettings.sizes.join(", ");
     settingsForm.elements.price.value = productSettings.price;
@@ -254,6 +268,13 @@ settingsForm.addEventListener("submit", async (event) => {
         .map((size) => size.trim().toUpperCase())
         .filter(Boolean);
     const nextSettings = {
+        productTitle: settingsForm.elements.productTitle.value.trim(),
+        productSubtitle: settingsForm.elements.productSubtitle.value.trim(),
+        productDescription: settingsForm.elements.productDescription.value.trim(),
+        releaseEyebrow: settingsForm.elements.releaseEyebrow.value.trim(),
+        releaseTitle: settingsForm.elements.releaseTitle.value.trim(),
+        releaseAccent: settingsForm.elements.releaseAccent.value.trim(),
+        releaseIntro: settingsForm.elements.releaseIntro.value.trim(),
         colorName: settingsForm.elements.colorName.value.trim(),
         colorHex: productSettings.colorHex,
         sizes,

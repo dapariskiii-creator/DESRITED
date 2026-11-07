@@ -8,6 +8,15 @@ CREATE TABLE IF NOT EXISTS desrited_product_settings (
     mockup_image TEXT
 );
 
+ALTER TABLE desrited_product_settings
+    ADD COLUMN IF NOT EXISTS product_title TEXT NOT NULL DEFAULT 'Zip Hoodie',
+    ADD COLUMN IF NOT EXISTS product_subtitle TEXT NOT NULL DEFAULT '“Own Rules”',
+    ADD COLUMN IF NOT EXISTS product_description TEXT NOT NULL DEFAULT 'Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.',
+    ADD COLUMN IF NOT EXISTS release_eyebrow TEXT NOT NULL DEFAULT 'THE FIRST RELEASE',
+    ADD COLUMN IF NOT EXISTS release_title TEXT NOT NULL DEFAULT 'Drop',
+    ADD COLUMN IF NOT EXISTS release_accent TEXT NOT NULL DEFAULT '01',
+    ADD COLUMN IF NOT EXISTS release_intro TEXT NOT NULL DEFAULT 'Satu rilisan. Satu pernyataan.\nDibuat untuk jadi bagian dari caramu.';
+
 INSERT INTO desrited_product_settings
     (id, color_name, color_hex, sizes, price, note)
 VALUES

@@ -41,10 +41,10 @@
         <section class="drop-section" id="koleksi">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> THE FIRST RELEASE</p>
-                    <h2>Drop <span>01</span></h2>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> <span id="release-eyebrow">THE FIRST RELEASE</span></p>
+                    <h2><span id="release-title">Drop</span> <span id="release-accent">01</span></h2>
                 </div>
-                <p class="section-intro">Satu rilisan. Satu pernyataan.<br>Dibuat untuk jadi bagian dari caramu.</p>
+                <p class="section-intro" id="release-intro">Satu rilisan. Satu pernyataan.<br>Dibuat untuk jadi bagian dari caramu.</p>
             </div>
 
             <div class="product-layout">
@@ -55,8 +55,8 @@
                 </div>
                 <div class="product-info" id="tentang">
                     <p class="eyebrow eyebrow-dark">DESRITED ORIGINALS</p>
-                    <h3>Zip Hoodie<br><span>“Own Rules”</span></h3>
-                    <p class="product-description">Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.</p>
+                    <h3><span id="product-title">Zip Hoodie</span><br><span id="product-subtitle">“Own Rules”</span></h3>
+                    <p class="product-description" id="product-description">Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.</p>
                     <div class="product-divider"></div>
                     <dl class="product-details">
                         <div><dt>Warna</dt><dd><span id="product-color-name">Black</span></dd></div>
@@ -84,6 +84,8 @@
                     <input id="customer-name" name="name" type="text" placeholder="Masukkan nama lengkap" autocomplete="name" required>
                     <label for="customer-address">Alamat pengiriman</label>
                     <textarea id="customer-address" name="address" placeholder="Nama jalan, nomor rumah, kelurahan, kecamatan, kota, kode pos" autocomplete="street-address" rows="4" required></textarea>
+                    <label for="customer-note">Keterangan tambahan</label>
+                    <textarea id="customer-note" name="note" placeholder="Contoh: patokan rumah, catatan kurir, atau permintaan khusus" rows="3"></textarea>
                     <fieldset class="size-picker">
                         <legend>Pilih ukuran dan jumlah</legend>
                         <div class="size-rows"></div>

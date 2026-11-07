@@ -4,6 +4,13 @@ const { neon } = require("@neondatabase/serverless");
 const sessionCookieName = "desrited_admin_session";
 const sessionDurationSeconds = 12 * 60 * 60;
 const defaultProductSettings = {
+    productTitle: "Zip Hoodie",
+    productSubtitle: "“Own Rules”",
+    productDescription: "Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.",
+    releaseEyebrow: "THE FIRST RELEASE",
+    releaseTitle: "Drop",
+    releaseAccent: "01",
+    releaseIntro: "Satu rilisan. Satu pernyataan.\nDibuat untuk jadi bagian dari caramu.",
     colorName: "Black",
     colorHex: "#171717",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -42,7 +49,14 @@ function isValidProductSettings(settings) {
         && settings.price.length <= 60
         && typeof settings.note === "string"
         && settings.note.length > 0
-        && settings.note.length <= 120;
+        && settings.note.length <= 120
+        && typeof settings.productTitle === "string" && settings.productTitle.length > 0 && settings.productTitle.length <= 60
+        && typeof settings.productSubtitle === "string" && settings.productSubtitle.length > 0 && settings.productSubtitle.length <= 60
+        && typeof settings.productDescription === "string" && settings.productDescription.length > 0 && settings.productDescription.length <= 300
+        && typeof settings.releaseEyebrow === "string" && settings.releaseEyebrow.length > 0 && settings.releaseEyebrow.length <= 60
+        && typeof settings.releaseTitle === "string" && settings.releaseTitle.length > 0 && settings.releaseTitle.length <= 30
+        && typeof settings.releaseAccent === "string" && settings.releaseAccent.length > 0 && settings.releaseAccent.length <= 10
+        && typeof settings.releaseIntro === "string" && settings.releaseIntro.length > 0 && settings.releaseIntro.length <= 180;
 }
 
 function isValidMockupImage(image) {

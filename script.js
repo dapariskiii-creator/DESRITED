@@ -6,6 +6,13 @@ const productNote = document.querySelector("#product-note");
 const productImage = document.querySelector("#product-mockup");
 const defaultProductImage = productImage.getAttribute("src");
 const defaultProductSettings = {
+    productTitle: "Zip Hoodie",
+    productSubtitle: "“Own Rules”",
+    productDescription: "Hoodie dengan zipper depan dan grafis khas DESRITED. Dirancang untuk menemani keseharianmu, dengan karakter yang tetap terasa.",
+    releaseEyebrow: "THE FIRST RELEASE",
+    releaseTitle: "Drop",
+    releaseAccent: "01",
+    releaseIntro: "Satu rilisan. Satu pernyataan.\nDibuat untuk jadi bagian dari caramu.",
     colorName: "Black",
     colorHex: "#171717",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -26,7 +33,14 @@ function isValidProductSettings(settings) {
         && settings.sizes.every((size) => typeof size === "string" && /^[A-Z0-9-]{1,8}$/.test(size))
         && new Set(settings.sizes).size === settings.sizes.length
         && typeof settings.price === "string"
-        && typeof settings.note === "string";
+        && typeof settings.note === "string"
+        && typeof settings.productTitle === "string"
+        && typeof settings.productSubtitle === "string"
+        && typeof settings.productDescription === "string"
+        && typeof settings.releaseEyebrow === "string"
+        && typeof settings.releaseTitle === "string"
+        && typeof settings.releaseAccent === "string"
+        && typeof settings.releaseIntro === "string";
 }
 
 function isValidMockupImage(image) {
@@ -85,6 +99,13 @@ function updateOrderTotal() {
 }
 
 function renderProductSettings() {
+    document.querySelector("#product-title").textContent = productSettings.productTitle;
+    document.querySelector("#product-subtitle").textContent = productSettings.productSubtitle;
+    document.querySelector("#product-description").textContent = productSettings.productDescription;
+    document.querySelector("#release-eyebrow").textContent = productSettings.releaseEyebrow;
+    document.querySelector("#release-title").textContent = productSettings.releaseTitle;
+    document.querySelector("#release-accent").textContent = productSettings.releaseAccent;
+    document.querySelector("#release-intro").textContent = productSettings.releaseIntro;
     document.querySelector("#product-color-name").textContent = productSettings.colorName;
     document.querySelector("#order-color-name").textContent = productSettings.colorName.toUpperCase();
     document.querySelector("#product-sizes").textContent = productSettings.sizes.join(" / ");
@@ -150,6 +171,7 @@ interestForm.addEventListener("submit", (event) => {
 
     const name = interestForm.elements.name.value.trim();
     const address = interestForm.elements.address.value.trim();
+    const customerNote = interestForm.elements.note.value.trim();
     const sizes = sizeRows
         .map((row) => ({
             size: row.dataset.size,
@@ -162,6 +184,7 @@ interestForm.addEventListener("submit", (event) => {
         "Produk: Zip Hoodie “Own Rules” - Drop 01",
         `Nama lengkap: ${name}`,
         `Alamat pengiriman: ${address}`,
+        ...(customerNote ? [`Keterangan tambahan: ${customerNote}`] : []),
         "Ukuran dan jumlah:",
         ...sizes,
         `Total: ${total} kaos`,

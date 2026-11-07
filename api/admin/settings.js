@@ -10,6 +10,13 @@ const {
 
 function toSettings(row) {
     return {
+        productTitle: row.product_title,
+        productSubtitle: row.product_subtitle,
+        productDescription: row.product_description,
+        releaseEyebrow: row.release_eyebrow,
+        releaseTitle: row.release_title,
+        releaseAccent: row.release_accent,
+        releaseIntro: row.release_intro,
         colorName: row.color_name,
         colorHex: row.color_hex,
         sizes: row.sizes,
@@ -35,7 +42,9 @@ module.exports = async function handler(request, response) {
 
         if (request.method === "GET") {
             const rows = await sql`
-                SELECT color_name, color_hex, sizes, price, note, mockup_image
+                SELECT product_title, product_subtitle, product_description,
+                    release_eyebrow, release_title, release_accent, release_intro,
+                    color_name, color_hex, sizes, price, note, mockup_image
                 FROM desrited_product_settings
                 WHERE id = 1
                 LIMIT 1
@@ -54,9 +63,18 @@ module.exports = async function handler(request, response) {
                 color_hex = ${settings.colorHex},
                 sizes = ${JSON.stringify(settings.sizes)}::jsonb,
                 price = ${settings.price},
-                note = ${settings.note}
+                note = ${settings.note},
+                product_title = ${settings.productTitle},
+                product_subtitle = ${settings.productSubtitle},
+                product_description = ${settings.productDescription},
+                release_eyebrow = ${settings.releaseEyebrow},
+                release_title = ${settings.releaseTitle},
+                release_accent = ${settings.releaseAccent},
+                release_intro = ${settings.releaseIntro}
             WHERE id = 1
-            RETURNING color_name, color_hex, sizes, price, note, mockup_image
+            RETURNING product_title, product_subtitle, product_description,
+                release_eyebrow, release_title, release_accent, release_intro,
+                color_name, color_hex, sizes, price, note, mockup_image
         `;
         sendJson(response, 200, toSettings(rows[0]));
     } catch (error) {

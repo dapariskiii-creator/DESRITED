@@ -37,6 +37,22 @@
             <h1 id="admin-panel-title">Atur detail produk</h1>
             <p class="admin-description">Pengaturan tersimpan di database dan akan tampil untuk semua pengunjung.</p>
             <form id="product-settings-form">
+                <p class="form-kicker">Teks produk</p>
+                <label for="setting-product-title">Judul produk (baris pertama)</label>
+                <input id="setting-product-title" name="productTitle" type="text" maxlength="60" required>
+                <label for="setting-product-subtitle">Judul produk (baris kedua)</label>
+                <input id="setting-product-subtitle" name="productSubtitle" type="text" maxlength="60" required>
+                <label for="setting-product-description">Deskripsi produk</label>
+                <textarea id="setting-product-description" name="productDescription" maxlength="300" rows="4" required></textarea>
+                <p class="form-kicker">Teks rilisan</p>
+                <label for="setting-release-eyebrow">Label rilisan</label>
+                <input id="setting-release-eyebrow" name="releaseEyebrow" type="text" maxlength="60" required>
+                <label for="setting-release-title">Judul rilisan</label>
+                <input id="setting-release-title" name="releaseTitle" type="text" maxlength="30" required>
+                <label for="setting-release-accent">Angka rilisan</label>
+                <input id="setting-release-accent" name="releaseAccent" type="text" maxlength="10" required>
+                <label for="setting-release-intro">Deskripsi rilisan</label>
+                <textarea id="setting-release-intro" name="releaseIntro" maxlength="180" rows="3" required></textarea>
                 <label for="setting-color-name">Nama warna</label>
                 <input id="setting-color-name" name="colorName" type="text" maxlength="30" required>
                 <label for="setting-sizes">Ukuran tersedia (pisahkan dengan koma)</label>
